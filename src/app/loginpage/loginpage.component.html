@@ -1,0 +1,67 @@
+<div class="container">
+    
+    <div class="row centered-form">
+        
+      <div class="col-xs-12 col-sm-8 col-md-5 col-sm-offset-2 offset-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+<form #Loginform="ngForm" novalidate (ngSubmit)="onSubmit(Loginform.value,LoginForm.valid)">
+ 
+   
+  <a [routerLink]="['/display']">
+    Display
+  </a>
+    <br><br>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                  <label>Login id: </label>
+                  <input id="loginid" class="form-control" required  name="loginid" placeholder="Login id" [(ngModel)]="login_id"
+                    #loginid="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                  <div class="md-errors-spacer" [hidden]="loginid.valid || loginid.untouched">
+                    <div class="red" *ngIf="loginid.errors && loginid.errors.required">
+                        <div class="md-errors-spacer" [hidden]="login.valid || loginid.untouched">
+                      Login id  is required
+                    </div>
+                    <div class="red" *ngIf="loginid.errors && loginid.errors.pattern">
+                      Login id is invalid
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="row">
+                      <div class="col-md-12">
+        <label>Password: </label>
+        <input type="password" [(ngModel)]="password" class="form-control" name="password" ngModel id="password" placeholder="Password" 
+          #firstname="ngModel" required >
+             </div>
+             </div>
+             </div>
+             </div>
+             <br>
+        <div>
+        <button type="submit" (click)="DoLogin()" class="btn btn-primary" [disabled]="!Loginform.valid">Submit</button>
+      </div>
+      
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  
+
+  
+
+    
+   
+   
+                   
+  
+  

@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+    font-size: 14px;
+}
+ .nav-item
+ {
+     margin-right: 40px;   
+ }
+ th{
+     color:blue;
+ }
+ 
+ 
+.red {
+    color : red;
+}
+
+

@@ -1,0 +1,96 @@
+<div class="container">
+    
+  <div class="row centered-form">
+      
+    <div class="col-xs-12 col-sm-8 col-md-5 col-sm-offset-2 offset-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Students registration form</h4>
+        </div>
+        <div class="panel-body">
+          <form #Registrationform="ngForm" novalidate (ngSubmit)="saveData(Registrationform.value, Registrationform.valid)">
+            <div class="row">
+              <div class="col-md-6">
+                <label>First name: </label>
+                <input type="text" class="form-control" name="firstname" id="fn" placeholder="First name" [(ngModel)]="student.firstname"
+                  #firstname="ngModel" required>
+                <div *ngIf="firstname.errors && (firstname.dirty || firstname.touched || firstname.submitted)">
+                  <div class="red" [hidden]="!firstname.errors.required">
+                    First name is required!
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label> Last name: </label>
+                <input type="text" class="form-control" name="lastname" placeholder="Last name" [(ngModel)]="student.lastname" #lastname="ngModel"
+                  required>
+                <div *ngIf="lastname.errors && (lastname.dirty || lastname.touched)">
+                  <div class="red" [hidden]="!lastname.errors.required">
+                    Last name is required!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-12">
+                <label>Email id: </label>
+                <input id="emailid" class="form-control" required emailid name="emailid" placeholder="Email id" [(ngModel)]="student.emailid"
+                  #emailid="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                <div class="md-errors-spacer" [hidden]="emailid.valid || emailid.untouched">
+                  <div class="red" *ngIf="emailid.errors && emailid.errors.required">
+                    Email is required
+                  </div>
+                  <div class="red" *ngIf="emailid.errors && emailid.errors.pattern">
+                    Email is invalid
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br/>
+            <div class="row">
+              <div class="col-md-12">
+                <label>Password: </label>
+                <input id="password" type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="student.password"
+                  #password="ngModel" required>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-12">
+                <label>Mobile no: </label>
+                <input type="text"   class="form-control" name="mobileno" placeholder="mobileno" [(ngModel)]="student.mobileno" #mobileno="ngModel"
+                  required pattern="[0-9]*"
+                  minlength="10"
+                  maxlength="10" >
+                  <div [hidden]="mobileno.valid || mobileno.pristine">
+                    
+                  <div [hidden]="!mobileno.hasError('minlength')">Mobile number should be 10digit</div>
+                  <div [hidden]="!mobileno.hasError('required')">Mobile number is required</div>
+                  <div [hidden]="!mobileno.hasError('pattern')">Mobile number should be only numbers</div>
+               </div>
+
+
+
+              </div>
+            </div>
+            <br>
+            <div>
+              <button type="submit" class="btn btn-primary" [disabled]="!Registrationform.valid">Submit</button>
+            
+              <a [routerLink]="['/']" class="btn btn-dark">
+                Back to Records
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+

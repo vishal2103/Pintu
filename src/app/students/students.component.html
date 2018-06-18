@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="col-sm-12">
+
+    <div class="row">
+      <div class="col-sm-10 text-center">
+        <h5> All Student Records </h5>
+      </div>
+      <div class="col-sm-2">
+       <button type="button" class="btn btn-warning"> <a [routerLink]="['/new-registration']">
+          New Registration
+        </a></button>
+        <button type="button" class="btn btn-warning"> <a [routerLink]="['/login']">
+          Login page
+        </a></button>
+      </div>
+    </div>
+
+    <table class="table table-striped">
+
+      <tr>
+        <th>First Name </th>
+        <th>Last Name </th>
+        <th>Email id </th>
+        <th>Password </th>
+        <th>Mobile No.: </th>
+        <th>Action </th>
+      </tr>
+
+
+      <tbody>
+        <tr *ngFor="let user of students; let i = index">
+          <td>{{user.firstname}}</td>
+          <td>{{user.lastname}}</td>
+          <td>
+            <a href="mailto:{{user.emailid}}">{{user.emailid}}</a>
+          </td>
+          <td>{{user.password}}</td>
+          <td>{{user.mobileno}}</td>
+          <td>
+            <div class="btn-group">
+              <a [routerLink]="['students/edit/' + i]" class="btn btn-primary">Edit</a>
+              
+              
+              <button type="button" class="btn btn-danger" (click)="deleteStudentRecord(i)">Delete</button>
+            </div>
+          </td>     
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

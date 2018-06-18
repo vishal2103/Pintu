@@ -1,0 +1,53 @@
+<h2>
+  Display details component
+</h2>
+<button class="btn btn-default" ><a routerLink="/new-registration">Registration page</a></button>
+
+
+<table class="table table-striped">
+
+    <tr>
+        <th>First_name </th>
+        <th>Last_name </th>
+        <th>Location_id </th>
+        <th>Role</th>
+        <th>User_id </th>
+        <th>Role_id </th>
+        <th>User_access_token</th>
+          
+          
+            
+      </tr>
+      <tbody>
+          <tr *ngFor="let user of myDetail">
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.location_id}}</td>
+            <td>{{user.role}}</td>
+            <td>{{user.user_id}}</td>
+            <td>{{user.role_id}}</td>
+            <td>{{user.user_access_token}}    
+        </tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
