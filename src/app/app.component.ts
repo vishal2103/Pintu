@@ -29,6 +29,8 @@ export class AppComponent implements OnInit {
     "last_name":"Bhati",
     "location_id":0,
     "location_name":null,
+  
+
     }
   myTxt: string = "";
   //constructor() {
@@ -43,7 +45,7 @@ this.service.addData(this.myData).subscribe(data=>
 
    console.log(data);
   
-  // localStorage.setItem("API",JSON.stringify(data));
+   localStorage.setItem("API",JSON.stringify(data));
 },
  err=>{
    console.error(err);

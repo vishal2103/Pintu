@@ -12,6 +12,7 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
 import { DisplaydetailsComponent } from './displaydetails/displaydetails.component';
 
 
+
 const appRoutes: Routes = [
   {
     path: 'new-registration',

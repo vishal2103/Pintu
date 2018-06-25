@@ -6,4 +6,5 @@ export class Details {
     role_id: number;
     user_id: number;
     user_access_token:number;
-}
+
+ }

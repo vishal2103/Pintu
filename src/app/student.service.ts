@@ -10,6 +10,7 @@ export class StudentService {
     addData(data)
     {
         return this.http.post('http://ec2-54-186-106-248.us-west-2.compute.amazonaws.com/niriks/api/v1/user/login',data);
+       
     }
     
   /* signIn = function(data)  {

@@ -14,7 +14,7 @@ import { Details } from '../detail/detail';
 export class DisplaydetailsComponent implements OnInit {
 
 
-  myDetail: Details = new Details();
+  public myDetail: Details[] = [];
 
 
   constructor(private http: Http, private service: StudentService) {
